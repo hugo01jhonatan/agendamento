@@ -92,3 +92,14 @@ export const agendamento = pgTable('agendamento', {
   observacoes: text('observacoes'),
   criadoEm: timestamp('criado_em').notNull().defaultNow(),
 })
+
+export type Cliente = typeof cliente.$inferSelect
+export type NewCliente = typeof cliente.$inferInsert
+export type Servico = typeof servico.$inferSelect
+export type NewServico = typeof servico.$inferInsert
+export type Agendamento = typeof agendamento.$inferSelect
+export type NewAgendamento = typeof agendamento.$inferInsert
+
+// Re-export aliases used in client components
+export type Client = Cliente
+export type Appointment = Agendamento
